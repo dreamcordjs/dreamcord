@@ -1,0 +1,19 @@
+{
+  "name": "discordic",
+  "description": "The Discord package of your dreams.",
+  "version": "0.0.0",
+  "homepage": "https://discordic.js.org",
+  "scripts": {
+    "start": "tsx src/test.ts",
+    "build": "rm -rf dist && tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "dependencies": {
+    "ws": "^8.14.1"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.5",
+    "tsup": "^7.2.0",
+    "tsx": "^3.12.10"
+  }
+}
