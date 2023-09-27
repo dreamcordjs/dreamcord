@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 import { Client } from "./client";
 import { Intents } from "./types/intents";
 const client = new Client({
@@ -9,9 +11,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", (message) => {
-  if(!message.inGuild()) return;
+  if (!message.inGuild()) return;
 });
 
-client.connect(
-  "MTE1MzY2MTQ4NzgxMDg5MTg4Ng.GK3D83.cPRkX6Hq4T9paCXMaz8fbXTCpHx6BpURLpmAHU"
-);
+client.connect(process.env.TOKEN!);
