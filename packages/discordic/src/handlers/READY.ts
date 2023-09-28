@@ -1,7 +1,7 @@
+import { Payload } from "@discordic/api-types";
 import { Client } from "../client";
 import { ClientUser } from "../models/client-user";
 import { Guild } from "../models/guild";
-import { Payload } from "../types/payload";
 
 export default async (client: Client, payload: Payload) => {
   const { user, guilds } = payload.d;

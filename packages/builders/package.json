@@ -1,9 +1,10 @@
 {
   "name": "@discordic/builders",
-  "description": "Helpful builders for various Discord related things, to be used for Discordic.",
+  "description": "Helpful builders for various Discord related things, mainly used for Discordic.",
   "version": "0.0.0",
   "dependencies": {
-    "discordic": "workspace:^"
+    "discordic": "workspace:^",
+    "@discordic/api-types": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

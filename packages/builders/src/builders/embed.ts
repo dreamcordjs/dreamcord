@@ -1,9 +1,9 @@
-import { Embed } from "discordic";
+import { APIEmbed } from "@discordic/api-types";
 
 export class EmbedBuilder {
-  public readonly data: Embed;
+  public readonly data: APIEmbed;
 
-  public constructor(data: Embed = {}) {
+  public constructor(data: APIEmbed = {}) {
     this.data = { ...data };
     if (data.timestamp)
       this.data.timestamp = new Date(data.timestamp).toISOString();
@@ -16,6 +16,11 @@ export class EmbedBuilder {
 
   public setDescription(description: string | null): this {
     this.data.description = description ?? undefined;
+    return this;
+  }
+
+  public setURL(url: string | null): this {
+    this.data.url = url ?? undefined;
     return this;
   }
 

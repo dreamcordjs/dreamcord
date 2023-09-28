@@ -60,14 +60,26 @@ importers:
         specifier: ^2.4.3
         version: 2.4.3(react-dom@17.0.2)(react@17.0.2)
 
+  packages/api-types:
+    devDependencies:
+      tsup:
+        specifier: ^7.2.0
+        version: 7.2.0
+
   packages/builders:
     dependencies:
+      '@discordic/api-types':
+        specifier: workspace:^
+        version: link:../api-types
       discordic:
         specifier: workspace:^
         version: link:../discordic
 
   packages/discordic:
     dependencies:
+      '@discordic/api-types':
+        specifier: workspace:^
+        version: link:../api-types
       ws:
         specifier: ^8.14.1
         version: 8.14.1
