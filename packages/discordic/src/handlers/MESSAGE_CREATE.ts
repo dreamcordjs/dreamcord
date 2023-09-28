@@ -1,9 +1,9 @@
-import { Payload } from '@discordic/api-types';
+import { GatewayPayload } from '@discordic/api-types';
 import { Client } from "../client";
 import { Message } from "../models/message";
 import { User } from "../models/user";
 
-export default async (client: Client, payload: Payload) => {
+export default async (client: Client, payload: GatewayPayload) => {
   let user = client.users.get(payload.d.author.id);
   if (!user) {
     const fetchedUser = await client.rest.fetchUser(payload.d.author.id);
