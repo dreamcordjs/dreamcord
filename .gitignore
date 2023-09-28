@@ -13,6 +13,8 @@ coverage
 out/
 build
 dist/
+.docusaurus
+.cache-loader
 
 # misc
 .DS_Store
