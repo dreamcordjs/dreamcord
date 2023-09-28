@@ -135,10 +135,12 @@ const config = {
         packages: [
           {
             path: "packages/discordic",
+            slug: "discordic",
             entry: "src/index.ts",
           },
           {
             path: "packages/builders",
+            slug: "builders",
             entry: "src/index.ts",
           },
         ],
