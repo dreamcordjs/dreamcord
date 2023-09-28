@@ -1,3 +1,5 @@
+<img align="right" src="https://i.ibb.co/ZL9PD25/discordic.png" width="150">
+
 # Discordic
 
 The Discord package of your dreams.

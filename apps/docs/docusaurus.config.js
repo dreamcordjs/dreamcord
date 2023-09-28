@@ -68,17 +68,17 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: "My Site",
+        title: "Discordic",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Discordic Logo",
+          src: "img/logo.png",
         },
         items: [
           {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "Documentation",
           },
           {
             to: "api",
@@ -86,7 +86,7 @@ const config = {
             position: "left",
           },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/ToastedDev/discordic",
             "aria-label": "GitHub",
             className: "header-github-link",
             position: "right",
@@ -97,11 +97,15 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Information",
             items: [
               {
                 label: "Documentation",
                 to: "/docs",
+              },
+              {
+                label: "API",
+                to: "/api",
               },
             ],
           },
