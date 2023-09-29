@@ -1,7 +1,7 @@
 {
   "name": "@discordic/builders",
   "description": "Helpful builders for various Discord related things, mainly used for Discordic.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "exports": {
     ".": {
       "require": {
