@@ -2,6 +2,34 @@
   "name": "@discordic/builders",
   "description": "Helpful builders for various Discord related things, mainly used for Discordic.",
   "version": "0.0.0",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://discordic.js.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToastedDev/discordic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ToastedDev/discordic/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf dist && tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
   "dependencies": {
     "discordic": "workspace:^",
     "@discordic/api-types": "workspace:^"

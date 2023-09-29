@@ -6,9 +6,11 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "release": "turbo run build lint && changeset version && changeset publish"
+    "release": "turbo run build --filter=\"./packages/*\" && changeset publish",
+    "version-packages": "changeset version"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@discordic/tsconfig": "workspace:*",
     "@types/node": "^20.7.0",
     "eslint": "^8.48.0",

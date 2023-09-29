@@ -17,8 +17,18 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "homepage": "https://discordic.js.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ToastedDev/discordic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ToastedDev/discordic/issues"
+  },
+  "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && tsup src/index.ts --format cjs,esm --dts"
+    "build": "rm -rf dist && tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
   },
   "publishConfig": {
     "access": "public"
