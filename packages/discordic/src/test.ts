@@ -11,7 +11,12 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", (message) => {
-  if (!message.inGuild()) return;
+  if (!message.inGuild() || message.author.bot) return;
+  if (message.content === "test") {
+    message.channel.send({
+      content: "test!",
+    });
+  }
 });
 
 client.connect(process.env.TOKEN!);

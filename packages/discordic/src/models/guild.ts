@@ -1,6 +1,9 @@
+import {
+  APIGuild,
+  ImageURLOptions,
+  VerificationLevel,
+} from "@discordic/api-types";
 import { Client } from "../client";
-import { VerificationLevel } from "../types/guild";
-import { ImageURLOptions } from "../types/images";
 
 export class Guild {
   /**
@@ -21,7 +24,7 @@ export class Guild {
   /**
    * The icon {@link https://discord.com/developers/docs/reference#image-formatting hash} of this guild.
    */
-  public icon!: string;
+  public icon!: string | null;
 
   /**
    * Verification level required for this guild.
@@ -33,12 +36,12 @@ export class Guild {
    */
   public vanityUrlCode!: string | null;
 
-  constructor(client: Client, data: any) {
+  constructor(client: Client, data: APIGuild) {
     this.client = client;
     this._patch(data);
   }
 
-  private _patch(data: any) {
+  private _patch(data: APIGuild) {
     this.id = data.id;
     this.name = data.name;
     this.icon = data.icon;
@@ -50,6 +53,6 @@ export class Guild {
    * The icon URL for this guild.
    */
   public iconURL(options?: ImageURLOptions) {
-    return this.client.cdn.icon(this.id, this.icon, options);
+    return this.icon ? this.client.cdn.icon(this.id, this.icon, options) : null;
   }
 }

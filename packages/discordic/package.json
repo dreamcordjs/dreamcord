@@ -27,8 +27,9 @@
     "lint": "tsc"
   },
   "dependencies": {
-    "ws": "^8.14.1",
-    "@discordic/api-types": "workspace:^"
+    "@discordic/api-types": "workspace:^",
+    "isomorphic-fetch": "^3.0.0",
+    "ws": "^8.14.1"
   },
   "devDependencies": {
     "@types/ws": "^8.5.5",

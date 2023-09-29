@@ -1,5 +1,5 @@
+import { APIUser, ImageURLOptions, UserFlags } from "@discordic/api-types";
 import { Client } from "../client";
-import { ImageURLOptions } from "../types/images";
 
 export class User {
   /**
@@ -25,7 +25,7 @@ export class User {
   /**
    * The global name/display name of this user.
    */
-  public globalName!: string;
+  public globalName: string | undefined;
 
   /**
    * The avatar {@link https://discord.com/developers/docs/reference#image-formatting hash} of this user.
@@ -40,7 +40,7 @@ export class User {
   /**
    * The accent color of this user encoded as an integer representation of hexadecimal color code.
    */
-  public accentColor!: string | null;
+  public accentColor!: number | null;
 
   /**
    * Whether this user belongs to an OAuth2 application.
@@ -55,19 +55,19 @@ export class User {
   /**
    * The {@link https://discord.com/developers/docs/resources/user#user-object-user-flags flags} of this user.
    */
-  public flags!: string[];
+  public flags: UserFlags | undefined;
 
   /**
    * The public {@link https://discord.com/developers/docs/resources/user#user-object-user-flags flags} of this user.
    */
-  public publicFlags!: string[];
+  public publicFlags: UserFlags | undefined;
 
-  constructor(client: Client, data: any) {
+  constructor(client: Client, data: APIUser) {
     this.client = client;
     this._patch(data);
   }
 
-  private _patch(data: any) {
+  private _patch(data: APIUser) {
     this.id = data.id;
     this.username = data.username;
     this.discriminator = data.discriminator;
@@ -81,13 +81,15 @@ export class User {
     this.publicFlags = data.public_flags;
   }
 
+  /**
+   * This user's username, or their legacy tag (e.g. `hydrabolt#0001`) if they're using the legacy username system
+   */
   public get tag() {
-    if (!this.bot)
-      process.emitWarning("Tags should not be used for users.", {
-        code: "USER_TAG_WARNING",
-        detail: 'Use "username" instead.',
-      });
-    return `${this.username}#${this.discriminator}`;
+    return typeof this.username === "string"
+      ? this.discriminator === "0"
+        ? this.username
+        : `${this.username}#${this.discriminator}`
+      : null;
   }
 
   /**

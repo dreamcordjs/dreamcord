@@ -1,5 +1,6 @@
 import EventEmitter from "events";
 import { CDN } from "./cdn";
+import { Channel } from "./models/channel";
 import { ClientUser } from "./models/client-user";
 import { Guild } from "./models/guild";
 import { User } from "./models/user";
@@ -53,6 +54,11 @@ export class Client<Ready extends boolean = boolean> extends EventEmitter {
    * All guilds that are currently cached.
    */
   public guilds: Map<string, Guild> = new Map();
+
+  /**
+   * All channels that are currently cached.
+   */
+  public channels: Map<string, Channel> = new Map();
 
   constructor(options: ClientOptions) {
     super();

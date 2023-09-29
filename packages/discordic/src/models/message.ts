@@ -1,5 +1,6 @@
 import { Client } from "../client";
 import { If } from "../types/if";
+import { Channel } from "./channel";
 import { Guild } from "./guild";
 import { User } from "./user";
 
@@ -33,7 +34,12 @@ export class Message<InGuild extends boolean = boolean> {
   /**
    * The guild ID this message was sent in.
    */
-  public guildId!: string;
+  public guildId!: If<InGuild, string>;
+
+  /**
+   * The channel this message was sent in.
+   */
+  public channel!: Channel;
 
   public readonly cacheType: InGuild = Boolean(this.guildId) as InGuild;
 
@@ -42,7 +48,7 @@ export class Message<InGuild extends boolean = boolean> {
     this._patch(data);
   }
 
-  private async _patch(data: any) {
+  private _patch(data: any) {
     this.id = data.id;
     this.content = data.content;
     this.guildId = data.guild_id ?? null;
@@ -50,6 +56,9 @@ export class Message<InGuild extends boolean = boolean> {
 
     let user = this.client.users.get(data.author.id);
     this.author = user!;
+
+    let channel = this.client.channels.get(data.channel_id);
+    this.channel = channel!;
   }
 
   public inGuild(): this is Message<true> {

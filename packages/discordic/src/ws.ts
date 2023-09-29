@@ -29,7 +29,6 @@ export class WebSocketManager {
             break;
           case 0:
             {
-              console.log(payload)
               const module = await import(`./handlers/${event}.ts`)
                 .then((x) => x?.default)
                 .catch(() => null);

@@ -1,4 +1,7 @@
+import "isomorphic-fetch";
+
 import { Client } from "./client";
+import { MessageOptions } from "./types/message";
 import { Constants, Endpoints } from "./utils/consts";
 
 export class RestAPIHandler {
@@ -29,6 +32,26 @@ export class RestAPIHandler {
     const response = await fetch(
       `${Constants.API}/${Endpoints.Users}/${userId}`,
       { headers: this.headers }
+    );
+    return response.json();
+  }
+
+  async fetchChannel(id: string) {
+    const response = await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${id}`,
+      { headers: this.headers }
+    );
+    return response.json();
+  }
+
+  async createMessage(options: MessageOptions, id: string) {
+    const response = await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${id}/${Endpoints.Messages}`,
+      {
+        method: "POST",
+        headers: this.headers,
+        body: JSON.stringify(options),
+      }
     );
     return response.json();
   }

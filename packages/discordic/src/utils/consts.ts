@@ -7,4 +7,6 @@ export enum Constants {
 export enum Endpoints {
   Guilds = "guilds",
   Users = "users",
+  Channels = "channels",
+  Messages = "messages",
 }
