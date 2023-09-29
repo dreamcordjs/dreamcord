@@ -12,14 +12,14 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://toasteddev.github.io",
+  url: "https://discordicjs.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/discordic/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "ToastedDev", // Usually your GitHub org/user name.
+  organizationName: "discordicjs", // Usually your GitHub org/user name.
   projectName: "discordic", // Usually your repo name.
   trailingSlash: false,
 
@@ -49,7 +49,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/ToastedDev/discordic/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/discordicjs/discordic/tree/main/apps/docs",
         },
         blog: {
           showReadingTime: true,
@@ -99,7 +99,7 @@ const config = {
             position: "left",
           },
           {
-            href: "https://github.com/ToastedDev/discordic",
+            href: "https://github.com/discordicjs/discordic",
             "aria-label": "GitHub",
             className: "header-github-link",
             position: "right",
@@ -136,7 +136,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/ToastedDev/discordic",
+                href: "https://github.com/discordicjs/discordic",
               },
             ],
           },
