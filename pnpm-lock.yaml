@@ -77,6 +77,10 @@ importers:
       discordic:
         specifier: workspace:^
         version: link:../discordic
+    devDependencies:
+      tsup:
+        specifier: ^7.2.0
+        version: 7.2.0
 
   packages/discordic:
     dependencies:

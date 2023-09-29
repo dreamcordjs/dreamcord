@@ -31,10 +31,13 @@
     "lint": "tsc"
   },
   "dependencies": {
-    "discordic": "workspace:^",
-    "@discordic/api-types": "workspace:^"
+    "@discordic/api-types": "workspace:^",
+    "discordic": "workspace:^"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "tsup": "^7.2.0"
   }
 }
