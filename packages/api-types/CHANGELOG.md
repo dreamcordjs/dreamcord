@@ -1,5 +1,11 @@
 # @discordic/api-types
 
+## 0.0.4
+
+### Patch Changes
+
+- fe59499: Add `.npmignore`.
+
 ## 0.0.3
 
 ### Patch Changes
