@@ -167,6 +167,7 @@ const config = {
         ],
         minimal: true,
         readmes: true,
+        changelogs: true,
         debug: true,
         gitRefName: "main",
       },
