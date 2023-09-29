@@ -38,7 +38,7 @@ export interface APIEmbed {
   /**
    * Color code of the embed
    */
-  color?: string;
+  color?: number;
 
   /**
    * Footer information

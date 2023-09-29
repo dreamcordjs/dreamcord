@@ -31,8 +31,7 @@
     "lint": "tsc"
   },
   "dependencies": {
-    "@discordic/api-types": "workspace:^",
-    "discordic": "workspace:^"
+    "@discordic/api-types": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

@@ -74,9 +74,6 @@ importers:
       '@discordic/api-types':
         specifier: workspace:^
         version: link:../api-types
-      discordic:
-        specifier: workspace:^
-        version: link:../discordic
     devDependencies:
       tsup:
         specifier: ^7.2.0
