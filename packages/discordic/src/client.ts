@@ -77,7 +77,7 @@ export class Client<Ready extends boolean = boolean> extends EventEmitter {
 
   /**
    * Connect to the Discord gateway.
-   * @deprecated Use `connect` instead.
+   * @deprecated Use {@link Client.connect} instead.
    */
   public async login(token: string) {
     return this.connect(token);

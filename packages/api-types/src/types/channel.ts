@@ -271,7 +271,7 @@ export enum ChannelType {
   /**
    * A channel that users can follow and crosspost into their own server
    * @see https://support.discord.com/hc/en-us/articles/360032008192
-   * @deprecated This is the old name for `GuildAnnouncement`
+   * @deprecated This is the old name for {@link ChannelType.GuildAnnouncement}
    */
   GuildNews = 5,
 }

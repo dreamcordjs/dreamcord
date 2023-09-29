@@ -1,3 +1,4 @@
+import { APIChannel } from "./channel";
 import { APIEmoji } from "./emoji";
 import { APIRole } from "./role";
 import { APISticker } from "./sticker";
@@ -61,7 +62,7 @@ export interface APIGuild {
 
   /**
    * Voice region ID for the guild
-   * @deprecated Replaced by {@link https://discord.com/developers/docs/resources/channel#channel-object-channel-structure channel.rtc_region}.
+   * @deprecated Replaced by {@link APIChannel.rtc_region}.
    * @see https://discord.com/developers/docs/resources/voice#voice-region-object
    */
   region?: string;
