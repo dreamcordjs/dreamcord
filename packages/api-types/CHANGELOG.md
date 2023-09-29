@@ -1,5 +1,11 @@
 # @discordic/api-types
 
+## 0.0.3
+
+### Patch Changes
+
+- 0d3ba97: Update documentation.
+
 ## 0.0.2
 
 ### Patch Changes

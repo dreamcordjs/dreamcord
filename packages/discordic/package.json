@@ -1,7 +1,7 @@
 {
   "name": "discordic",
   "description": "The Discord package of your dreams.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "exports": {
     ".": {
       "require": {
