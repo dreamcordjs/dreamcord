@@ -29,7 +29,7 @@ export class Message<InGuild extends boolean = boolean> {
   /**
    * The author ID of this message.
    */
-  public authorId!: User;
+  public authorId!: string;
 
   /**
    * The guild ID this message was sent in.
@@ -61,6 +61,9 @@ export class Message<InGuild extends boolean = boolean> {
     this.channel = channel!;
   }
 
+  /**
+   * Whether this message was sent in a guild.
+   */
   public inGuild(): this is Message<true> {
     return Boolean(this.guildId);
   }
