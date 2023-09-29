@@ -1,5 +1,11 @@
 # discordic
 
+## 0.0.5
+
+### Patch Changes
+
+- 9c4fd07: Fix [`Message.authorId`](https://toasteddev.github.io/discordic/api/discordic/class/Message#authorId) type.
+
 ## 0.0.4
 
 ### Patch Changes
