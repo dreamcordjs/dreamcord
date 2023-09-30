@@ -20,8 +20,7 @@ npm install dreamcord
 2. Add some code for a basic bot:
 
 ```js title="index.js" showLineNumbers
-import { Client } from "./client";
-import { Intents } from "./types/intents";
+import { Client, Intents } from "dreamcord";
 const client = new Client({
   intents: Intents.Guilds,
 });

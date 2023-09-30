@@ -1,47 +1,64 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import React from "react";
+import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "⌨️ Easy to use",
+    description: <>Make your own Discord bot in just a few lines of code!</>,
+  },
+  {
+    title: "🔧 Simple to migrate",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Coming from <a href="https://discord.js.org">discord.js</a> or a similar
+        package? No problem! Migrating is super simple.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: "🔬 Type-safe",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        With the power of{" "}
+        <a href="https://www.typescriptlang.org/">TypeScript</a>, we provide a
+        strict, type-safe, and ergonomic API for a better developer experience.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: "❌ No insane amount of breaking changes",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Now you don't need to worry about having to rewrite your code every few
+        months!
+      </>
+    ),
+  },
+  {
+    title: "🔥 Feature rich",
+    description: (
+      <>We support tons of Discord features to make your life easier!</>
+    ),
+  },
+  {
+    title: "🔀 Async-first",
+    description: (
+      <>
+        We've engineered all APIs and abstractions to be async-first for maximum
+        performance, efficiency, and portability.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ title, description }) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
+    <div
+      className={clsx("col col--4")}
+      style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem" }}
+    >
+      <div className="text--left padding-horiz--md">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
