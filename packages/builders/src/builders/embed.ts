@@ -4,7 +4,7 @@ import {
   APIEmbedField,
   APIEmbedFooter,
   APIEmbedImage,
-} from "@discordic/api-types";
+} from "@dreamcord/api-types";
 import { RestOrArray, normalizeArray } from "../utils/normalizeArray";
 
 /**

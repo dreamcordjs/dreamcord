@@ -1,4 +1,4 @@
-import { APIChannel, ChannelType } from "@discordic/api-types";
+import { APIChannel, ChannelType } from "@dreamcord/api-types";
 import { Client } from "../client";
 import { MessageOptions } from "../types/message";
 import { Message } from "./message";

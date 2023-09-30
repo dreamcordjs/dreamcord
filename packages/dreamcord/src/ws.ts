@@ -58,8 +58,8 @@ export class WebSocketManager {
           intents: this.client.options.intents,
           properties: {
             $os: this.client.options.properties?.os ?? "linux",
-            $browser: this.client.options.properties?.os ?? "discordic",
-            $device: this.client.options.properties?.os ?? "discordic",
+            $browser: this.client.options.properties?.os ?? "dreamcord",
+            $device: this.client.options.properties?.os ?? "dreamcord",
           },
         },
       })

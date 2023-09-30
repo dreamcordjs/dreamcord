@@ -1,6 +1,6 @@
 {
-  "name": "@discordic/builders",
-  "description": "Helpful builders for various Discord related things, mainly used for Discordic.",
+  "name": "@dreamcord/builders",
+  "description": "Helpful builders for various Discord related things, mainly used for Dreamcord.",
   "version": "0.0.4",
   "exports": {
     ".": {
@@ -17,13 +17,13 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "homepage": "https://discordic.js.org",
+  "homepage": "https://dreamcord.js.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ToastedDev/discordic.git"
+    "url": "https://github.com/dreamcordjs/dreamcord.git"
   },
   "bugs": {
-    "url": "https://github.com/ToastedDev/discordic/issues"
+    "url": "https://github.com/dreamcordjs/dreamcord/issues"
   },
   "license": "MIT",
   "scripts": {
@@ -31,7 +31,7 @@
     "lint": "tsc"
   },
   "dependencies": {
-    "@discordic/api-types": "workspace:^"
+    "@dreamcord/api-types": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

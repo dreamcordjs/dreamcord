@@ -1,17 +1,17 @@
-# discordic
+# dreamcord
 
 ## 0.0.5
 
 ### Patch Changes
 
-- 9c4fd07: Fix [`Message.authorId`](https://toasteddev.github.io/discordic/api/discordic/class/Message#authorId) type.
+- 9c4fd07: Fix [`Message.authorId`](https://dreamcordjs.github.io/dreamcord/api/dreamcord/class/Message#authorId) type.
 
 ## 0.0.4
 
 ### Patch Changes
 
 - Updated dependencies [fe59499]
-  - @discordic/api-types@0.0.4
+  - @dreamcord/api-types@0.0.4
 
 ## 0.0.3
 
@@ -19,19 +19,19 @@
 
 - 0d3ba97: Update documentation.
 - Updated dependencies [0d3ba97]
-  - @discordic/api-types@0.0.3
+  - @dreamcord/api-types@0.0.3
 
 ## 0.0.2
 
 ### Patch Changes
 
 - Updated dependencies [f1071bc]
-  - @discordic/api-types@0.0.2
+  - @dreamcord/api-types@0.0.2
 
 ## 0.0.1
 
 ### Patch Changes
 
-- d771b68: First ever release of Discordic.
+- d771b68: First ever release of Dreamcord.
 - Updated dependencies [d771b68]
-  - @discordic/api-types@0.0.1
+  - @dreamcord/api-types@0.0.1

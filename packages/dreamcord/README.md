@@ -1,4 +1,4 @@
-# Discordic
+# Dreamcord
 
 **Note: This isn't production ready _just yet_.**
 
@@ -6,7 +6,7 @@ The [Discord](https://discord.com) package of your dreams.
 
 ## About
 
-Discordic is a [Node.js](https://nodejs.org) module that allows you to intuitively interact with [Discord's API](https://discord.com/developers/docs/intro).
+Dreamcord is a [Node.js](https://nodejs.org) module that allows you to intuitively interact with [Discord's API](https://discord.com/developers/docs/intro).
 
 It allows you to create powerful bots for [Discord's ever growing platform](https://discord.com).
 
@@ -15,26 +15,26 @@ It allows you to create powerful bots for [Discord's ever growing platform](http
 Using [npm](https://npmjs.com):
 
 ```bash
-npm install discordic
+npm install dreamcord
 ```
 
 Using [yarn](https://yarnpkg.com/):
 
 ```bash
-yarn add discordic
+yarn add dreamcord
 ```
 
 Using [pnpm](https://pnpm.io/):
 
 ```bash
-pnpm add discordic
+pnpm add dreamcord
 ```
 
-Using [bun](https://bun.sh/):
+<!-- Using [bun](https://bun.sh/):
 
 ```bash
-bun add discordic
-```
+bun add dreamcord
+``` -->
 
 ## Special Thanks
 

@@ -1,4 +1,0 @@
-{
-  "extends": "@discordic/tsconfig/library.json",
-  "exclude": ["src/test.ts"]
-}

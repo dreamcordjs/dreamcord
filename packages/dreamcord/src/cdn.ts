@@ -3,7 +3,7 @@ import {
   ALLOWED_SIZES,
   ImageSize,
   ImageURLOptions,
-} from "@discordic/api-types";
+} from "@dreamcord/api-types";
 import { Constants } from "./utils/consts";
 
 export interface MakeURLOptions {

@@ -1,4 +1,4 @@
-import { GatewayPayload } from "@discordic/api-types";
+import { GatewayPayload } from "@dreamcord/api-types";
 import { Client } from "../client";
 import { ClientUser } from "../models/client-user";
 import { Guild } from "../models/guild";

@@ -2,7 +2,7 @@ import {
   APIGuild,
   ImageURLOptions,
   VerificationLevel,
-} from "@discordic/api-types";
+} from "@dreamcord/api-types";
 import { Client } from "../client";
 
 export class Guild {

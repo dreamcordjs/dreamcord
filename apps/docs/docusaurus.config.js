@@ -7,20 +7,20 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Discordic",
+  title: "Dreamcord",
   tagline: "The Discord package of your dreams.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://discordicjs.github.io",
+  url: "https://dreamcordjs.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/discordic/",
+  baseUrl: "/dreamcord/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "discordicjs", // Usually your GitHub org/user name.
-  projectName: "discordic", // Usually your repo name.
+  organizationName: "dreamcordjs", // Usually your GitHub org/user name.
+  projectName: "dreamcord", // Usually your repo name.
   trailingSlash: false,
 
   onBrokenLinks: "throw",
@@ -49,7 +49,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/discordicjs/discordic/tree/main/apps/docs",
+            "https://github.com/dreamcordjs/dreamcord/tree/main/apps/docs",
         },
         blog: {
           showReadingTime: true,
@@ -81,9 +81,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: "Discordic",
+        title: "Dreamcord",
         logo: {
-          alt: "Discordic Logo",
+          alt: "Dreamcord Logo",
           src: "img/logo.png",
         },
         items: [
@@ -99,7 +99,7 @@ const config = {
             position: "left",
           },
           {
-            href: "https://github.com/discordicjs/discordic",
+            href: "https://github.com/dreamcordjs/dreamcord",
             "aria-label": "GitHub",
             className: "header-github-link",
             position: "right",
@@ -136,12 +136,12 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/discordicjs/discordic",
+                href: "https://github.com/dreamcordjs/dreamcord",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ToastedToast. All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Dreamcord Labs. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -156,7 +156,7 @@ const config = {
         projectRoot: path.resolve("../.."),
         packages: [
           {
-            path: "packages/discordic",
+            path: "packages/dreamcord",
             entry: "src/index.ts",
           },
           {

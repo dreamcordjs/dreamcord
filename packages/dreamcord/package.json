@@ -1,5 +1,5 @@
 {
-  "name": "discordic",
+  "name": "dreamcord",
   "description": "The Discord package of your dreams.",
   "version": "0.0.5",
   "exports": {
@@ -17,13 +17,13 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "homepage": "https://discordic.js.org",
+  "homepage": "https://dreamcord.js.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ToastedDev/discordic.git"
+    "url": "https://github.com/dreamcordjs/dreamcord.git"
   },
   "bugs": {
-    "url": "https://github.com/ToastedDev/discordic/issues"
+    "url": "https://github.com/dreamcordjs/dreamcord/issues"
   },
   "license": "MIT",
   "publishConfig": {
@@ -35,7 +35,7 @@
     "lint": "tsc"
   },
   "dependencies": {
-    "@discordic/api-types": "workspace:^",
+    "@dreamcord/api-types": "workspace:^",
     "isomorphic-fetch": "^3.0.0",
     "ws": "^8.14.1"
   },

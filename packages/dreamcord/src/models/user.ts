@@ -1,4 +1,4 @@
-import { APIUser, ImageURLOptions, UserFlags } from "@discordic/api-types";
+import { APIUser, ImageURLOptions, UserFlags } from "@dreamcord/api-types";
 import { Client } from "../client";
 
 export class User {

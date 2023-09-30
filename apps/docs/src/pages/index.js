@@ -15,8 +15,8 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <img
-          src="/discordic/img/logo-inverted.png"
-          alt="Discordic Logo"
+          src="/dreamcord/img/logo-inverted.png"
+          alt="Dreamcord Logo"
           width={250}
           height={190}
         />

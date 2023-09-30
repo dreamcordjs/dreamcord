@@ -1,4 +1,4 @@
-# @discordic/builders
+# @dreamcord/builders
 
 ## 0.0.4
 
@@ -6,14 +6,14 @@
 
 - fe59499: Add `.npmignore`.
 - Updated dependencies [fe59499]
-  - @discordic/api-types@0.0.4
+  - @dreamcord/api-types@0.0.4
 
 ## 0.0.3
 
 ### Patch Changes
 
 - Updated dependencies [0d3ba97]
-  - @discordic/api-types@0.0.3
+  - @dreamcord/api-types@0.0.3
 
 ## 0.0.2
 
@@ -42,13 +42,13 @@
   ```
 
 - Updated dependencies [f1071bc]
-  - @discordic/api-types@0.0.2
+  - @dreamcord/api-types@0.0.2
 
 ## 0.0.1
 
 ### Patch Changes
 
-- d771b68: First ever release of Discordic.
+- d771b68: First ever release of Dreamcord.
 - Updated dependencies [d771b68]
-  - @discordic/api-types@0.0.1
-  - discordic@0.0.1
+  - @dreamcord/api-types@0.0.1
+  - dreamcord@0.0.1

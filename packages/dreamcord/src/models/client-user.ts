@@ -1,4 +1,4 @@
-import { APIUser } from "@discordic/api-types";
+import { APIUser } from "@dreamcord/api-types";
 import { Client } from "../client";
 import { User } from "./user";
 

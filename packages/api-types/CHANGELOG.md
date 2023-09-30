@@ -1,4 +1,4 @@
-# @discordic/api-types
+# @dreamcord/api-types
 
 ## 0.0.4
 
@@ -24,4 +24,4 @@
 
 ### Patch Changes
 
-- d771b68: First ever release of Discordic.
+- d771b68: First ever release of Dreamcord.
