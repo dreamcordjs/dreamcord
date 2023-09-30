@@ -1,5 +1,6 @@
 import { Client } from "../client";
 import { If } from "../types/if";
+import { Intents } from "../types/intents";
 import { MessageOptions } from "../types/message";
 import { Channel } from "./channel";
 import { Emoji } from "./emoji";
@@ -19,7 +20,7 @@ export class Message<InGuild extends boolean = boolean> {
 
   /**
    * The content of this message. Requires the MessageContent intent.
-   * @requires Intents.MessageContent
+   * @requires {@link Intents.MessageContent}
    */
   public content!: string;
 

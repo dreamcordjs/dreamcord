@@ -112,6 +112,16 @@ export class RestAPIHandler {
     );
   }
 
+  async triggerTypingIndicator(channelId: string) {
+    await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${channelId}/${Endpoints.Typing}`,
+      {
+        method: "POST",
+        headers: this.headers,
+      }
+    );
+  }
+
   public set token(token: string) {
     this._token = token;
     this.headers.Authorization = `Bot ${this._token}`;

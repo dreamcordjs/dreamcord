@@ -59,4 +59,11 @@ export class Channel {
     if (this.guildId) response.guild_id = this.guildId;
     return new Message(this.client, response);
   }
+
+  /**
+   * Sends a typing indicator in this channel.
+   */
+  public async sendTyping() {
+    await this.client.rest.triggerTypingIndicator(this.id);
+  }
 }

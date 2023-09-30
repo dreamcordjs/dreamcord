@@ -13,22 +13,26 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
   if (!message.inGuild() || message.author.bot) return;
   if (message.content === "test") {
-    message.channel
-      .send({
-        content: "test",
-      })
-      .then((message) =>
-        message.edit({
-          content: "test!",
+    message.channel.sendTyping();
+
+    setTimeout(() => {
+      message.channel
+        .send({
+          content: "test",
         })
-      )
-      .then((message) => message.react("🔥"))
-      .then((message) =>
-        message.react(message.guild?.emojis.get("1046366360604786688")!)
-      )
-      .then((message) => message.pin())
-      .then((message) => message.unpin())
-      .then((message) => message.delete());
+        .then(async (message) => {
+          await message.edit({
+            content: "test!",
+          });
+          await message.react("🔥");
+          await message.react(
+            message.guild!.emojis.get("1046366360604786688")!
+          );
+          await message.pin();
+          await message.unpin();
+          await message.delete();
+        });
+    }, 1000);
   }
 });
 

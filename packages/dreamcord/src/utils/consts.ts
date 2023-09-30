@@ -11,4 +11,5 @@ export enum Endpoints {
   Messages = "messages",
   Reactions = "reactions",
   Pins = "pins",
+  Typing = "typing"
 }
