@@ -1,7 +1,6 @@
 import { APIChannel, ChannelType } from "@dreamcord/api-types";
-import { Client } from "../client";
-import { MessageOptions } from "../types/message";
-import { Message } from "./message";
+import { Client } from "../../client";
+import { TextBasedChannel } from "./text-based";
 
 export class Channel {
   /**
@@ -41,29 +40,19 @@ export class Channel {
     this.guildId = data.guild_id;
   }
 
-  /**
-   * Send a message in this channel.
-   */
-  public async send(options: string | MessageOptions) {
-    let data: any;
-
-    if (typeof options === "string") {
-      data = {
-        content: options,
-      };
-    } else {
-      data = options;
-    }
-
-    const response = await this.client.rest.createMessage(data, this.id);
-    if (this.guildId) response.guild_id = this.guildId;
-    return new Message(this.client, response);
-  }
-
-  /**
-   * Sends a typing indicator in this channel.
-   */
-  public async sendTyping() {
-    await this.client.rest.triggerTypingIndicator(this.id);
+  public isTextBased(): this is TextBasedChannel {
+    return [
+      ChannelType.AnnouncementThread,
+      ChannelType.DM,
+      ChannelType.GroupDM,
+      ChannelType.GuildAnnouncement,
+      ChannelType.GuildForum,
+      ChannelType.GuildMedia,
+      ChannelType.GuildStageVoice,
+      ChannelType.GuildText,
+      ChannelType.GuildVoice,
+      ChannelType.PublicThread,
+      ChannelType.PrivateThread,
+    ].includes(this.type);
   }
 }

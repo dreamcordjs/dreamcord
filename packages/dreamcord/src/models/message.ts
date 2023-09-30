@@ -2,10 +2,10 @@ import { Client } from "../client";
 import { If } from "../types/if";
 import { Intents } from "../types/intents";
 import { MessageOptions } from "../types/message";
-import { Channel } from "./channel";
+import { Channel } from "./channels/base";
+import { TextBasedChannel } from "./channels/text-based";
 import { Emoji } from "./emoji";
 import { Guild } from "./guild";
-import { User } from "./user";
 
 export class Message<InGuild extends boolean = boolean> {
   /**
@@ -25,11 +25,6 @@ export class Message<InGuild extends boolean = boolean> {
   public content!: string;
 
   /**
-   * The author of this message.
-   */
-  public author!: User;
-
-  /**
    * The author ID of this message.
    */
   public authorId!: string;
@@ -40,9 +35,9 @@ export class Message<InGuild extends boolean = boolean> {
   public guildId!: If<InGuild, string>;
 
   /**
-   * The channel this message was sent in.
+   * The channel ID this message was sent in.
    */
-  public channel!: Channel;
+  public channelId!: string;
 
   public readonly cacheType: InGuild = Boolean(this.guildId) as InGuild;
 
@@ -56,12 +51,21 @@ export class Message<InGuild extends boolean = boolean> {
     this.content = data.content;
     this.guildId = data.guild_id ?? null;
     this.authorId = data.author.id;
+    this.channelId = data.channel_id;
+  }
 
-    let user = this.client.users.get(data.author.id);
-    this.author = user!;
+  /**
+   * The author of this message.
+   */
+  get author() {
+    return this.client.users.get(this.authorId)!;
+  }
 
-    let channel = this.client.channels.get(data.channel_id);
-    this.channel = channel!;
+  /**
+   * The channel this message was sent in.
+   */
+  get channel() {
+    return this.client.channels.get(this.channelId)! as TextBasedChannel;
   }
 
   /**
@@ -81,7 +85,7 @@ export class Message<InGuild extends boolean = boolean> {
   }
 
   /**
-   * Reply to this message.
+   * Sends an inline reply to this message.
    * @see https://support.discord.com/hc/en-us/articles/360057382374-Replies-FAQ
    */
   public reply(options: string | MessageOptions) {

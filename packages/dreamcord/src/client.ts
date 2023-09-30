@@ -1,6 +1,6 @@
 import EventEmitter from "events";
 import { CDN } from "./cdn";
-import { Channel } from "./models/channel";
+import { Channel } from "./models/channels/base";
 import { ClientUser } from "./models/client-user";
 import { Guild } from "./models/guild";
 import { User } from "./models/user";
