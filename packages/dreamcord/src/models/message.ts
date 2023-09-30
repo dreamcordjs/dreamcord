@@ -147,4 +147,20 @@ export class Message<InGuild extends boolean = boolean> {
     await this.client.rest.createReaction(this.channel.id, this.id, reaction);
     return this;
   }
+
+  /**
+   * Pin this message.
+   */
+  public async pin() {
+    await this.client.rest.pinMessage(this.channel.id, this.id);
+    return this;
+  }
+
+  /**
+   * Unpin this message.
+   */
+  public async unpin() {
+    await this.client.rest.unpinMessage(this.channel.id, this.id);
+    return this;
+  }
 }

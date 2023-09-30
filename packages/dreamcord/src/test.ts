@@ -26,6 +26,8 @@ client.on("messageCreate", (message) => {
       .then((message) =>
         message.react(message.guild?.emojis.get("1046366360604786688")!)
       )
+      .then((message) => message.pin())
+      .then((message) => message.unpin())
       .then((message) => message.delete());
   }
 });

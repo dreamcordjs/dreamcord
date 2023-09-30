@@ -92,6 +92,26 @@ export class RestAPIHandler {
     );
   }
 
+  async pinMessage(channelId: string, messageId: string) {
+    await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${channelId}/${Endpoints.Pins}/${messageId}`,
+      {
+        method: "PUT",
+        headers: this.headers,
+      }
+    );
+  }
+
+  async unpinMessage(channelId: string, messageId: string) {
+    await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${channelId}/${Endpoints.Pins}/${messageId}`,
+      {
+        method: "DELETE",
+        headers: this.headers,
+      }
+    );
+  }
+
   public set token(token: string) {
     this._token = token;
     this.headers.Authorization = `Bot ${this._token}`;
