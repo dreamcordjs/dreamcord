@@ -1,5 +1,5 @@
 ---
-"@dreamcord/api-types": minor
+"@dreamcord/api-types": patch
 ---
 
 Export more API types.
