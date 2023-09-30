@@ -1,5 +1,28 @@
 # discordic
 
+## 0.1.0
+
+### Minor Changes
+
+- 6e6ac87: Add replying to messages.
+
+  ```ts
+  client.on("messageCreate", (message) => {
+    message.reply({
+      content: "test!",
+    });
+  });
+  ```
+
+- 8ddea67: Add more cross-compatibility with discord.js for sending messages.
+
+  ```ts
+  client.on("messageCreate", (message) => {
+    message.reply("test!"); // now works!
+    message.channel.send("test!"); // now works!
+  });
+  ```
+
 ## 0.0.5
 
 ### Patch Changes
