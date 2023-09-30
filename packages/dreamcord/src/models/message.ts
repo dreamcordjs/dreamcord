@@ -95,4 +95,24 @@ export class Message<InGuild extends boolean = boolean> {
 
     return this.channel.send(data);
   }
+
+  public async edit(options: string | MessageOptions) {
+    let data: any;
+
+    if (typeof options === "string") {
+      data = {
+        content: options,
+      };
+    } else {
+      data = options;
+    }
+
+    const response = await this.client.rest.editMessage(
+      data,
+      this.channel.id,
+      this.id
+    );
+    if (this.guildId) response.guild_id = this.guildId;
+    return new Message(this.client, response);
+  }
 }

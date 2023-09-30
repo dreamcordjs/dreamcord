@@ -56,6 +56,22 @@ export class RestAPIHandler {
     return response.json();
   }
 
+  async editMessage(
+    options: MessageOptions,
+    channelId: string,
+    messageId: string
+  ) {
+    const response = await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${channelId}/${Endpoints.Messages}/${messageId}`,
+      {
+        method: "PATCH",
+        headers: this.headers,
+        body: JSON.stringify(options),
+      }
+    );
+    return response.json();
+  }
+
   public set token(token: string) {
     this._token = token;
     this.headers.Authorization = `Bot ${this._token}`;
