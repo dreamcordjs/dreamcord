@@ -3,27 +3,27 @@ import { Client } from "../client";
 
 export class Emoji {
   /**
-   * The client that initialized this emoji.
+   * The client that initialized this emoji
    */
   public client: Client;
 
   /**
-   * The ID of this emoji.
+   * The ID of this emoji
    */
   public id!: string | null;
 
   /**
-   * The name of this emoji.
+   * The name of this emoji
    */
   public name!: string | null;
 
   /**
-   * Whether this emoji is managed.
+   * Whether this emoji is managed
    */
   public managed!: boolean;
 
   /**
-   * Whether this emoji is animated.
+   * Whether this emoji is animated
    */
   public animated!: boolean;
 
@@ -46,7 +46,7 @@ export class Emoji {
   }
 
   /**
-   * Convert this emoji into a usable string for the API.
+   * Convert this emoji into a usable string for the API
    */
   public toString() {
     return this.id

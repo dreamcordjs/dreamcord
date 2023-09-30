@@ -51,6 +51,19 @@ export class CDN {
     return this.dynamicMakeURL(`/icons/${id}/${iconHash}`, iconHash, options);
   }
 
+  public guildMemberAvatar(
+    guildId: string,
+    userId: string,
+    avatarHash: string,
+    options?: Readonly<ImageURLOptions>
+  ): string {
+    return this.dynamicMakeURL(
+      `/guilds/${guildId}/users/${userId}/avatars/${avatarHash}`,
+      avatarHash,
+      options
+    );
+  }
+
   private dynamicMakeURL(
     route: string,
     hash: string,

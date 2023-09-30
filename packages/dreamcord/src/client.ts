@@ -29,34 +29,34 @@ export class Client<Ready extends boolean = boolean> extends EventEmitter {
   private socket: WebSocketManager = new WebSocketManager(this);
 
   /**
-   * The rest API handler for this client.
+   * The rest API handler for this client
    */
   public rest: RestAPIHandler = new RestAPIHandler(this);
 
   /**
-   * The CDN handler for this client.
+   * The CDN handler for this client
    */
   public cdn: CDN = new CDN();
 
   /**
-   * The options for this client.
+   * The options for this client
    */
   public options: ClientOptions;
 
   private _user!: ClientUser;
 
   /**
-   * All users that are currently cached.
+   * All users that are currently cached
    */
   public users: Map<string, User> = new Map();
 
   /**
-   * All guilds that are currently cached.
+   * All guilds that are currently cached
    */
   public guilds: Map<string, Guild> = new Map();
 
   /**
-   * All channels that are currently cached.
+   * All channels that are currently cached
    */
   public channels: Map<string, Channel> = new Map();
 
@@ -68,7 +68,7 @@ export class Client<Ready extends boolean = boolean> extends EventEmitter {
   }
 
   /**
-   * Connect to the Discord gateway.
+   * Connect to the Discord gateway
    */
   public async connect(token: string) {
     this.rest.token = token;
@@ -76,15 +76,15 @@ export class Client<Ready extends boolean = boolean> extends EventEmitter {
   }
 
   /**
-   * Connect to the Discord gateway.
-   * @deprecated Use {@link Client.connect} instead.
+   * Connect to the Discord gateway
+   * @deprecated Use {@link Client.connect} instead
    */
   public async login(token: string) {
     return this.connect(token);
   }
 
   /**
-   * The user used to log in.
+   * The user used to log in
    */
   public get user() {
     return this._user;

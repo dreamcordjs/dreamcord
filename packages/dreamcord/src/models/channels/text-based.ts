@@ -10,7 +10,7 @@ export class TextBasedChannel extends Channel {
   }
 
   /**
-   * Send a message in this channel.
+   * Send a message in this channel
    */
   public async send(options: string | MessageOptions) {
     let data: any;
@@ -29,7 +29,7 @@ export class TextBasedChannel extends Channel {
   }
 
   /**
-   * Sends a typing indicator in this channel.
+   * Sends a typing indicator in this channel
    */
   public async sendTyping() {
     await this.client.rest.triggerTypingIndicator(this.id);

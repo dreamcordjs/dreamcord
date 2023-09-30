@@ -23,22 +23,23 @@ export class Guild {
   public name!: string;
 
   /**
-   * The icon {@link https://discord.com/developers/docs/reference#image-formatting hash} of this guild.
+   * The icon hash of this guild
+   * @see https://discord.com/developers/docs/reference#image-formatting
    */
   public icon!: string | null;
 
   /**
-   * Emojis that are in this guild.
+   * Emojis that are in this guild
    */
   public emojis: Map<string, Emoji> = new Map();
 
   /**
-   * Verification level required for this guild.
+   * Verification level required for this guild
    */
   public verificationLevel!: VerificationLevel;
 
   /**
-   * The vanity URL code for this guild.
+   * The vanity URL code for this guild
    */
   public vanityUrlCode!: string | null;
 
@@ -61,7 +62,7 @@ export class Guild {
   }
 
   /**
-   * The icon URL for this guild.
+   * The icon URL for this guild
    */
   public iconURL(options?: ImageURLOptions) {
     return this.icon ? this.client.cdn.icon(this.id, this.icon, options) : null;

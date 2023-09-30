@@ -3,62 +3,66 @@ import { Client } from "../client";
 
 export class User {
   /**
-   * The client that initialized this user.
+   * The client that initialized this user
    */
   public client: Client;
 
   /**
-   * The ID of this user.
+   * The ID of this user
    */
   public id!: string;
 
   /**
-   * The username of this user.
+   * The username of this user
    */
   public username!: string;
 
   /**
-   * The discriminator of this user (if any).
+   * The discriminator of this user (if any)
    */
   public discriminator!: string;
 
   /**
-   * The global name/display name of this user.
+   * The global name/display name of this user
    */
   public globalName: string | undefined;
 
   /**
-   * The avatar {@link https://discord.com/developers/docs/reference#image-formatting hash} of this user.
+   * The avatar hash of this user
+   * @see https://discord.com/developers/docs/reference#image-formatting
    */
   public avatar!: string | null;
 
   /**
-   * The banner {@link https://discord.com/developers/docs/reference#image-formatting hash} of this user.
+   * The banner hash of this user
+   * @see https://discord.com/developers/docs/reference#image-formatting
    */
   public banner!: string | null;
 
   /**
-   * The accent color of this user encoded as an integer representation of hexadecimal color code.
+   * The accent color of this user encoded as an integer representation of hexadecimal color code
    */
   public accentColor!: number | null;
 
   /**
-   * Whether this user belongs to an OAuth2 application.
+   * Whether this user belongs to an OAuth2 application
    */
   public bot!: boolean;
 
   /**
-   * Whether this user is an official Discord System user (part of the urgent message system).
+   * Whether this user is an official Discord System user (part of the urgent message system)
    */
   public system!: boolean;
 
   /**
-   * The {@link https://discord.com/developers/docs/resources/user#user-object-user-flags flags} of this user.
+   * The flags of this user
+   * @see https://discord.com/developers/docs/resources/user#user-object-user-flags
    */
   public flags: UserFlags | undefined;
 
   /**
-   * The public {@link https://discord.com/developers/docs/resources/user#user-object-user-flags flags} of this user.
+   * The public flags of this user
+   * @see https://discord.com/developers/docs/resources/user#user-object-user-flags
    */
   public publicFlags: UserFlags | undefined;
 
@@ -93,7 +97,14 @@ export class User {
   }
 
   /**
-   * The avatar URL of this user.
+   * The global name of this user, or their username if they don't have one
+   */
+  public get displayName() {
+    return this.globalName ?? this.username;
+  }
+
+  /**
+   * The avatar URL of this user
    */
   public displayAvatarURL(options?: ImageURLOptions) {
     if (!this.avatar) {
@@ -109,7 +120,7 @@ export class User {
   }
 
   /**
-   * The banner URL of this user.
+   * The banner URL of this user
    */
   public bannerURL(options?: ImageURLOptions) {
     if (!this.banner) return null;

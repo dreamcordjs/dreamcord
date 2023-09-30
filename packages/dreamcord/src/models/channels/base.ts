@@ -4,27 +4,27 @@ import { TextBasedChannel } from "./text-based";
 
 export class Channel {
   /**
-   * The client that initialized this channel.
+   * The client that initialized this channel
    */
   public client: Client;
 
   /**
-   * The ID of this channel.
+   * The ID of this channel
    */
   public id!: string;
 
   /**
-   * The name of this channel.
+   * The name of this channel
    */
   public name: string | undefined;
 
   /**
-   * The type of channel.
+   * The type of channel
    */
   public type!: ChannelType;
 
   /**
-   * The ID of the guild this channel is in.
+   * The ID of the guild this channel is in
    */
   public guildId: string | undefined;
 
@@ -57,7 +57,7 @@ export class Channel {
   }
 
   /**
-   * When concatenated with a string, this automatically returns the channel's mention instead of the Channel object.
+   * When concatenated with a string, this automatically returns the channel's mention instead of the Channel object
    */
   public toString() {
     return `<#${this.id}>`;

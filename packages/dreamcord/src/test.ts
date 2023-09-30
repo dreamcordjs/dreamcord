@@ -18,11 +18,11 @@ client.on("messageCreate", (message) => {
     setTimeout(() => {
       message.channel
         .send({
-          content: "test",
+          content: `hello ${message.member.displayName}!`,
         })
         .then(async (message) => {
           await message.edit({
-            content: "test!",
+            content: "hello world!",
           });
           await message.react("🔥");
           await message.react(
