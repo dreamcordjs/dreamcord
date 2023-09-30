@@ -15,13 +15,14 @@ client.on("messageCreate", (message) => {
   if (message.content === "test") {
     message.channel
       .send({
-        content: "test!",
+        content: "test",
       })
       .then((message) =>
         message.edit({
           content: "test!",
         })
-      );
+      )
+      .then((message) => message.delete());
   }
 });
 

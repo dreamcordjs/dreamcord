@@ -72,6 +72,16 @@ export class RestAPIHandler {
     return response.json();
   }
 
+  async deleteMessage(channelId: string, messageId: string) {
+    await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${channelId}/${Endpoints.Messages}/${messageId}`,
+      {
+        method: "DELETE",
+        headers: this.headers,
+      }
+    );
+  }
+
   public set token(token: string) {
     this._token = token;
     this.headers.Authorization = `Bot ${this._token}`;

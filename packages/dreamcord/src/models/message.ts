@@ -78,6 +78,10 @@ export class Message<InGuild extends boolean = boolean> {
     ) as If<InGuild, Guild>;
   }
 
+  /**
+   * Reply to this message.
+   * @see https://support.discord.com/hc/en-us/articles/360057382374-Replies-FAQ
+   */
   public reply(options: string | MessageOptions) {
     let data: any;
 
@@ -96,6 +100,9 @@ export class Message<InGuild extends boolean = boolean> {
     return this.channel.send(data);
   }
 
+  /**
+   * Edit this message.
+   */
   public async edit(options: string | MessageOptions) {
     let data: any;
 
@@ -114,5 +121,13 @@ export class Message<InGuild extends boolean = boolean> {
     );
     if (this.guildId) response.guild_id = this.guildId;
     return new Message(this.client, response);
+  }
+
+  /**
+   * Delete this message.
+   */
+  public async delete() {
+    await this.client.rest.deleteMessage(this.channel.id, this.id);
+    return this;
   }
 }
