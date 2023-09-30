@@ -1,3 +1,7 @@
+![npm](https://img.shields.io/npm/v/dreamcord?color=%23f00)
+![GitHub Repo stars](https://img.shields.io/github/stars/dreamcordjs/dreamcord)
+![GitHub](https://img.shields.io/github/license/dreamcordjs/dreamcord)
+
 <img align="right" src="https://i.ibb.co/9chpB6B/dreamcord.png" width="150">
 
 # Dreamcord
