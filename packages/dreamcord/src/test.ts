@@ -22,6 +22,10 @@ client.on("messageCreate", (message) => {
           content: "test!",
         })
       )
+      .then((message) => message.react("🔥"))
+      .then((message) =>
+        message.react(message.guild?.emojis.get("1046366360604786688")!)
+      )
       .then((message) => message.delete());
   }
 });

@@ -2,6 +2,7 @@ import { Client } from "../client";
 import { If } from "../types/if";
 import { MessageOptions } from "../types/message";
 import { Channel } from "./channel";
+import { Emoji } from "./emoji";
 import { Guild } from "./guild";
 import { User } from "./user";
 
@@ -128,6 +129,22 @@ export class Message<InGuild extends boolean = boolean> {
    */
   public async delete() {
     await this.client.rest.deleteMessage(this.channel.id, this.id);
+    return this;
+  }
+
+  /**
+   * React to this message.
+   */
+  public async react(emoji: string | Emoji) {
+    let reaction: string;
+
+    if (typeof emoji === "string") {
+      reaction = emoji;
+    } else {
+      reaction = `${emoji.name}:${emoji.id}`;
+    }
+
+    await this.client.rest.createReaction(this.channel.id, this.id, reaction);
     return this;
   }
 }

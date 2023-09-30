@@ -4,6 +4,7 @@ import {
   VerificationLevel,
 } from "@dreamcord/api-types";
 import { Client } from "../client";
+import { Emoji } from "./emoji";
 
 export class Guild {
   /**
@@ -27,6 +28,11 @@ export class Guild {
   public icon!: string | null;
 
   /**
+   * Emojis that are in this guild.
+   */
+  public emojis: Map<string, Emoji> = new Map();
+
+  /**
    * Verification level required for this guild.
    */
   public verificationLevel!: VerificationLevel;
@@ -47,6 +53,11 @@ export class Guild {
     this.icon = data.icon;
     this.verificationLevel = data.verification_level;
     this.vanityUrlCode = data.vanity_url_code;
+
+    for (const emoji of data.emojis) {
+      if (!emoji.id) continue;
+      this.emojis.set(emoji.id, new Emoji(this.client, emoji));
+    }
   }
 
   /**

@@ -82,6 +82,16 @@ export class RestAPIHandler {
     );
   }
 
+  async createReaction(channelId: string, messageId: string, emoji: string) {
+    await fetch(
+      `${Constants.API}/${Endpoints.Channels}/${channelId}/${Endpoints.Messages}/${messageId}/reactions/${emoji}/@me`,
+      {
+        method: "PUT",
+        headers: this.headers,
+      }
+    );
+  }
+
   public set token(token: string) {
     this._token = token;
     this.headers.Authorization = `Bot ${this._token}`;

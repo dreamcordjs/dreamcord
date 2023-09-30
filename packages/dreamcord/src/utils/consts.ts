@@ -9,4 +9,5 @@ export enum Endpoints {
   Users = "users",
   Channels = "channels",
   Messages = "messages",
+  Reactions = "reactions",
 }
