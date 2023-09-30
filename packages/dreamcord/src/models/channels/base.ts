@@ -55,4 +55,11 @@ export class Channel {
       ChannelType.PrivateThread,
     ].includes(this.type);
   }
+
+  /**
+   * When concatenated with a string, this automatically returns the channel's mention instead of the Channel object.
+   */
+  public toString() {
+    return `<#${this.id}>`;
+  }
 }
