@@ -1,3 +1,4 @@
+import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import React from "react";
 import styles from "./styles.module.css";
@@ -12,7 +13,8 @@ const FeatureList = [
     description: (
       <>
         Coming from <a href="https://discord.js.org">discord.js</a> or a similar
-        package? No problem! Migrating is super simple.
+        package? No problem!{" "}
+        <Link to="/docs/migrating">Migrating is super simple</Link>.
       </>
     ),
   },
