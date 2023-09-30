@@ -13,7 +13,9 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
   if (!message.inGuild() || message.author.bot) return;
   if (message.content === "test") {
-    message.reply("test!");
+    message.reply({
+      content: "test!",
+    });
   }
 });
 
