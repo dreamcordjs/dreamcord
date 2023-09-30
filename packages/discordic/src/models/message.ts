@@ -82,13 +82,25 @@ export class Message<InGuild extends boolean = boolean> {
    * Reply to this message.
    * @see https://support.discord.com/hc/en-us/articles/360057382374-Replies-FAQ
    */
-  public reply(options: MessageOptions) {
-    const data = {
-      ...options,
-      message_reference: {
-        message_id: this.id,
-      },
-    };
+  public reply(options: string | MessageOptions) {
+    let data: any;
+
+    if (typeof options === "string") {
+      data = {
+        content: options,
+        message_reference: {
+          message_id: this.id,
+        },
+      };
+    } else {
+      data = {
+        ...options,
+        message_reference: {
+          message_id: this.id,
+        },
+      };
+    }
+
     return this.channel.send(data);
   }
 }
