@@ -44,8 +44,18 @@ export class Channel {
   /**
    * Send a message in this channel.
    */
-  public async send(options: MessageOptions) {
-    const response = await this.client.rest.createMessage(options, this.id);
+  public async send(options: string | MessageOptions) {
+    let data: any;
+
+    if (typeof options === "string") {
+      data = {
+        content: options,
+      };
+    } else {
+      data = options;
+    }
+
+    const response = await this.client.rest.createMessage(data, this.id);
     if (this.guildId) response.guild_id = this.guildId;
     return new Message(this.client, response);
   }

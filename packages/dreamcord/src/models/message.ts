@@ -1,5 +1,6 @@
 import { Client } from "../client";
 import { If } from "../types/if";
+import { MessageOptions } from "../types/message";
 import { Channel } from "./channel";
 import { Guild } from "./guild";
 import { User } from "./user";
@@ -75,5 +76,23 @@ export class Message<InGuild extends boolean = boolean> {
     return (
       this.guildId ? this.client.guilds.get(this.guildId) ?? null : null
     ) as If<InGuild, Guild>;
+  }
+
+  public reply(options: string | MessageOptions) {
+    let data: any;
+
+    if (typeof options === "string") {
+      data = {
+        content: options,
+      };
+    } else {
+      data = options;
+    }
+
+    data.message_reference = {
+      message_id: this.id,
+    };
+
+    return this.channel.send(data);
   }
 }
