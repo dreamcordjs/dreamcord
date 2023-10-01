@@ -19,7 +19,7 @@ export class Message<InGuild extends boolean = boolean> {
   public id!: string;
 
   /**
-   * The content of this message. Requires the {@link Intents.MessageContent MessageContent intent}
+   * The content of this message. Requires {@link Intents.MessageContent}
    * @requires {@link Intents.MessageContent}
    */
   public content!: string;
