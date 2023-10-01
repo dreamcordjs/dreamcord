@@ -1,8 +1,9 @@
 import "dotenv/config";
 
 import { Client } from "./client";
+import { Intents } from "./types/intents";
 const client = new Client({
-  intents: ["Guilds", "GuildMessages", "MessageContent"],
+  intents: ["Guilds", Intents.GuildMessages, "MessageContent"],
 });
 
 client.on("ready", () => {

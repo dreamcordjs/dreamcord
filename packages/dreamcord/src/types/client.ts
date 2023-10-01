@@ -4,7 +4,7 @@ import { Presence } from "./presence";
 import { Intents } from "./intents";
 
 export interface ClientOptions {
-  intents: (keyof typeof Intents)[] | (typeof Intents)[] | number | bigint;
+  intents: number | Array<keyof typeof Intents | number>;
   properties?: {
     os?: string;
     browser?: string;

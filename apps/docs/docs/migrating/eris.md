@@ -18,6 +18,48 @@ client.connect("<your bot's token>");
 
 This is similar to how [discord.js](https://discord.js.org) does it.
 
+## Specifying intents
+
+On [Eris](https://abal.moe/Eris/), you might've specified intents like this:
+
+```js title="index.js" showLineNumbers
+const bot = new Eris("Bot <your bot's token>", {
+  intents: ["guilds", "guildMessages"],
+});
+```
+
+But on Dreamcord, you specify intents using `PascalCase` instead of `camelCase`, like this:
+
+```js title="index.js" showLineNumbers
+const client = new Client({
+  intents: ["Guilds", "GuildMessages"],
+});
+```
+
+Or through the `Intents` enum, like this:
+
+```js title="index.js" showLineNumbers
+// Import the `Intents` enum from dreamcord
+import { Intents } from "dreamcord";
+
+const client = new Client({
+  intents: [Intents.Guilds, Intents.GuildMessages],
+});
+```
+
+Or maybe even a mix of both!
+
+```js title="index.js" showLineNumbers
+// Import the `Intents` enum from dreamcord
+import { Intents } from "dreamcord";
+
+const client = new Client({
+  intents: ["Guilds", Intents.GuildMessages],
+});
+```
+
+This is similar to how [discord.js](https://discord.js.org) and [Oceanic](https://github.com/OceanicJS/Oceanic) does it.
+
 ## Sending a message
 
 On [Eris](https://abal.moe/Eris/), you might've sent messages like this:
