@@ -67,6 +67,9 @@ const config = {
       {
         hashed: true,
         indexPages: true,
+        indexDocs: true,
+        indexBlog: false,
+        searchBarShortcutHint: false,
       },
     ],
   ],
@@ -98,12 +101,7 @@ const config = {
             label: "API",
             position: "left",
           },
-          {
-            href: "https://github.com/dreamcordjs/dreamcord",
-            "aria-label": "GitHub",
-            className: "header-github-link",
-            position: "right",
-          },
+          ...require("./socials.js"),
         ],
       },
       footer: {
