@@ -1,6 +1,7 @@
 import WebSocket from "ws";
 import { Client } from "./client";
 import { Constants } from "./utils/consts";
+import { GatewayOpCodes } from "@dreamcord/api-types";
 
 export class WebSocketManager {
   private socket!: WebSocket;
@@ -21,13 +22,13 @@ export class WebSocketManager {
         let payload = JSON.parse(data.toString());
         const { t: event, op, d } = payload;
         switch (op) {
-          case 10:
+          case GatewayOpCodes.Hello:
             {
               const { heartbeat_interval } = d;
               this.interval = this.heartbeat(heartbeat_interval);
             }
             break;
-          case 0:
+          case GatewayOpCodes.Dispatch:
             {
               const module = await import(`./handlers/${event}.ts`)
                 .then((x) => x?.default)
