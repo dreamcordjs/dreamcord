@@ -1,9 +1,8 @@
 import "dotenv/config";
 
 import { Client } from "./client";
-import { Intents } from "./types/intents";
 const client = new Client({
-  intents: Intents.Guilds | Intents.GuildMessages | Intents.MessageContent,
+  intents: ["Guilds", "GuildMessages", "MessageContent"],
 });
 
 client.on("ready", () => {
@@ -26,7 +25,7 @@ client.on("messageCreate", (message) => {
           });
           await message.react("🔥");
           await message.react(
-            message.guild!.emojis.get("1046366360604786688")!
+            message.guild!.emojis.get("1046366360604786688")!,
           );
           await message.pin();
           await message.unpin();

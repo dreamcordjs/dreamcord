@@ -7,15 +7,16 @@ import { User } from "./models/user";
 import { RestAPIHandler } from "./rest";
 import { ClientEvents, ClientOptions } from "./types/client";
 import { WebSocketManager } from "./ws";
+import { Intents } from "./types/intents";
 
 export declare interface Client {
   on<E extends keyof ClientEvents>(
     eventName: E,
-    listener: (...args: ClientEvents[E]) => void
+    listener: (...args: ClientEvents[E]) => void,
   ): this;
   off<E extends keyof ClientEvents>(
     eventName: E,
-    listener: (...args: ClientEvents[E]) => void
+    listener: (...args: ClientEvents[E]) => void,
   ): this;
   emit<E extends keyof ClientEvents>(
     eventName: E,
@@ -64,6 +65,17 @@ export class Client<Ready extends boolean = boolean> extends EventEmitter {
     super();
 
     if (!options.intents) throw new SyntaxError("Intents must be specified.");
+    if (Array.isArray(options.intents)) {
+      let bitmask = 0;
+      for (const intent of options.intents) {
+        if (typeof intent === "number") {
+          bitmask |= intent;
+        } else if (Intents[intent as keyof typeof Intents]) {
+          bitmask |= Intents[intent as keyof typeof Intents];
+        } else throw new SyntaxError(`Unknown intent: ${intent}`);
+      }
+      options.intents = bitmask;
+    }
     this.options = options;
   }
 

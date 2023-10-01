@@ -55,8 +55,16 @@ export class Message<InGuild extends boolean = boolean> {
     this.id = data.id;
     this.content = data.content;
     this.guildId = data.guild_id ?? null;
+    this.member = (
+      data.member === undefined || !this.inGuild()
+        ? null
+        : new GuildMember(
+            this.client,
+            { ...data.member, id: data.author.id },
+            this.guild,
+          )
+    ) as If<InGuild, GuildMember>;
     this.authorId = data.author.id;
-    this.member = data.member ?? null;
     this.channelId = data.channel_id;
   }
 
@@ -129,7 +137,7 @@ export class Message<InGuild extends boolean = boolean> {
     const response = await this.client.rest.editMessage(
       data,
       this.channel.id,
-      this.id
+      this.id,
     );
     if (this.guildId) response.guild_id = this.guildId;
     return new Message(this.client, response);

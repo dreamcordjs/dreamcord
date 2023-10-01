@@ -1,8 +1,4 @@
-import {
-  APIGuild,
-  APIGuildMember,
-  ImageURLOptions,
-} from "@dreamcord/api-types";
+import { APIGuildMember, ImageURLOptions } from "@dreamcord/api-types";
 import { Client } from "../client";
 import { Guild } from "./guild";
 import { User } from "./user";
@@ -48,14 +44,36 @@ export class GuildMember {
    */
   public communicationDisabledUntilTimestamp: number | null = null;
 
-  constructor(client: Client, data: APIGuildMember, guild: APIGuild) {
+  constructor(
+    client: Client,
+    data: APIGuildMember & { id?: string },
+    guild: Guild,
+  ) {
     this.client = client;
-    this.guild = new Guild(this.client, guild);
+    this.guild = guild;
+
+    let user: User | undefined;
+    let id: string | undefined;
+    if (!data.user && data.id) {
+      user = client.users.get((id = data.id));
+    } else if (data.user) {
+      user = new User(this.client, data.user);
+      id = user.id;
+      this.client.users.set(user.id, user);
+    }
+
+    if (!user)
+      throw new TypeError(
+        `Member recieved without a user${
+          id === undefined ? " or ID." : `: ${id}`
+        }`,
+      );
+    else this.user = user;
+
     this._patch(data);
   }
 
   private _patch(data: APIGuildMember) {
-    this.user = new User(this.client, data.user!);
     if ("nick" in data && data.nick) this.nickname = data.nick;
     if ("avatar" in data && data.avatar) {
       if (typeof data.avatar === "string") this.avatar = data.avatar;
@@ -112,7 +130,7 @@ export class GuildMember {
         this.guild.id,
         this.displayName,
         this.avatar,
-        options
+        options,
       )
     );
   }

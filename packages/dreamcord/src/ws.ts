@@ -62,7 +62,7 @@ export class WebSocketManager {
             $device: this.client.options.properties?.os ?? "dreamcord",
           },
         },
-      })
+      }),
     );
   }
 }
