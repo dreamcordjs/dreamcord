@@ -77,8 +77,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/logo.png",
       colorMode: {
         defaultMode: "dark",
         respectPrefersColorScheme: true,
@@ -145,6 +144,16 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [
+        {
+          name: "twitter:card",
+          content: "summary",
+        },
+        {
+          name: "theme-color",
+          content: "#5865f2",
+        },
+      ],
     }),
 
   plugins: [
