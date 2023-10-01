@@ -1,5 +1,12 @@
 # @dreamcord/builders
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [7e07542]
+  - @dreamcord/api-types@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

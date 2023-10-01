@@ -1,5 +1,11 @@
 # @dreamcord/api-types
 
+## 0.0.5
+
+### Patch Changes
+
+- 7e07542: Export more API types.
+
 ## 0.0.4
 
 ### Patch Changes
