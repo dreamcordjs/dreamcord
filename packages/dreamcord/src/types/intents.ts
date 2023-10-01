@@ -1,3 +1,6 @@
+/**
+ * https://discord.com/developers/docs/topics/gateway#list-of-intents
+ */
 export enum Intents {
   Guilds = 1 << 0,
   GuildMembers = 1 << 1,
